@@ -10,7 +10,11 @@ module.exports = {
       exposes: {
         "./Component": "./src/app/app.component.ts",
       },
-      shared: ["@angular/core", "@angular/common", "@angular/router"],
+      shared: share({
+        "@angular/core": { singleton: true, strictVersion: true },
+        "@angular/common": { singleton: true, strictVersion: true },
+        "@angular/router": { singleton: true, strictVersion: true },
+      }),
     }),
   ],
 };
